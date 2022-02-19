@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Green Hammer - Mockup</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles/mockup.css">
+    <link rel="stylesheet" href="../styles/mockup.css">
     <style>
         .icons-fixed {
             max-height: 1.5rem;
@@ -15,7 +15,6 @@
             position: fixed;
             bottom: 0;
         }
-
         #TradingTable {
             border: 1px dashed #8888;
         }
@@ -37,7 +36,7 @@
                         </svg>
                     </div>
                     Home</button></li>
-                <li><button class="navbtn selected" data-navto="Dashboard">
+                <li><button class="navbtn" data-navto="Dashboard">
                     <div class="icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-expand" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z"/>
@@ -51,7 +50,7 @@
                         </svg>
                     </div>
                     Apps & Tools</button></li>
-                <li><button class="navbtn" data-navto="Widgets">
+                <li><button class="navbtn selected" data-navto="Widgets">
                     <div class="icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-basket" viewBox="0 0 16 16">
                             <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9H2zM1 7v1h14V7H1zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5z"/>
@@ -86,18 +85,43 @@
         <section id="Home" class="under-construction hidden">
             <h2>Home</h2>
         </section>
-        <section id="Dashboard" class="under-construction">
+        <section id="Dashboard" class="under-construction hidden">
             <h2>Dashboard</h2>
             <table id="SampleTable" class="table">
 
             </table>
+
         </section>
         <section id="AppsAndTools" class="under-construction hidden">
             <h2>Apps & Tools</h2>
         </section>
-        <section id="Widgets" class="under-construction hidden">
+        <section id="Widgets" class="under-construction">
             <h2>Widgets</h2>
-            <a href="widgets" class="btn btn-warning">Go to Widgets</a>
+            <!-- TradingView Widget BEGIN -->
+            <div class="tradingview-widget-container">
+                <div id="tradingview_8b9a2"></div>
+                <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/" rel="noopener" target="_blank"><span class="blue-text">AAPL Chart</span></a> by TradingView</div>
+                <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                <script type="text/javascript">
+                    new TradingView.widget(
+                        {
+                            "width": 980,
+                            "height": 610,
+                            "symbol": "NASDAQ:AAPL",
+                            "interval": "D",
+                            "timezone": "Etc/UTC",
+                            "theme": "dark",
+                            "style": "1",
+                            "locale": "en",
+                            "toolbar_bg": "#f1f3f6",
+                            "enable_publishing": false,
+                            "allow_symbol_change": true,
+                            "container_id": "tradingview_8b9a2"
+                        }
+                    );
+                </script>
+            </div>
+            <!-- TradingView Widget END -->
         </section>
         <section id="Community" class="under-construction hidden">
             <h2>Community</h2>
@@ -109,7 +133,6 @@
             <h2>Settings</h2>
         </section>   
     </main>
-
-    <script src="scripts/main.js"></script>
+    <script src="../scripts/main.js"></script>
 </body>
 </html>
