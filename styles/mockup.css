@@ -164,6 +164,7 @@ section {
 section {
     height: 100vh;
     width: calc(100vw - var(--w-nav));
+    position: relative;
 }
 
 
