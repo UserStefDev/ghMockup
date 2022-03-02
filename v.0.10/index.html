@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Hammer - Mockup</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/brands.min.css" integrity="sha512-bSncow0ApIhONbz+pNI52n0trz5fMWbgteHsonaPk42JbunIeM9ee+zTYAUP1eLPky5wP0XZ7MSLAPxKkwnlzw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="dashboard-style.css">
+    <style>
+        .icons-fixed {
+            max-height: 1.5rem;
+            height: fit-content;
+            width: fit-content;
+            position: fixed;
+            bottom: 0;
+        }
+        #TradingTable {
+            border: 1px solid #8888;
+        }
+        #TradingTable td {
+            border: 1px solid #3339;
+        }
+        .login-form {
+            width: fit-content;
+        }
+        .w-fit {
+            width: fit-content;
+        }
+        .soft-link {
+            cursor: pointer;
+        }
+        .alert-center {
+            justify-content: center;
+            align-items: center;
+            place-content: center;
+            place-items: center;
+        }
+        .form-switch .form-check-input {
+            transform: rotate(180deg);
+            margin-left: 0;
+        }
+        /* nav ul li a {cursor: default;}
+        nav ul li a:link {cursor: default;}
+        nav ul li a:visited {cursor: default;} */
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><button class="brand" data-nav="Home">Green Hammer</button></li>
+
+                <li><button class="navbtn" data-navto="All">All</button></li>
+                <li><button class="navbtn" data-navto="Overview">Overview</button></li>
+                <li><button class="navbtn" data-navto="Alerts">Alerts</button></li>
+
+                <li><a href="https://userstefdev.github.io/ghMockup/"><div class="nav-ver" data-ver="v.0.10"></div></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="Home" class="under-construction-2">
+            <div id="login-card" class="container w-fit">
+                <div class="d-flex flex-column bd-highlight mb-3">
+                    <div class="fs-2 fw-bold mb-3 text-center">Login</div>
+                    <div class="login-form m-2 p-5 border border-success rounded">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">username</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputPassword2" class="form-label">password</label>
+                            <input type="password" class="form-control" id="inputPassword2" placeholder="">
+                        </div>
+                        <div class="col-auto d-flex flex-row-reverse">
+                            <button id="login" class="btn btn-primary mb-3" data-navto="All">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="All" class="under-construction-2 hidden">
+            <div class="fs-2 text">All</div>
+            <div class="d-flex flex-row">
+                <div class="container w-75">
+                    <div class="w-fit input-group mb-3">
+                        <input type="text" class="form-control" placeholder="" aria-label="Search" aria-describedby="basic-addon2">
+                        <button class="btn btn-outline-secondary" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Coin</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">1h</th>
+                                <th scope="col">24h</th>
+                                <th scope="col">7d</th>
+                                <th scope="col" class="col-6"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-boxes" viewBox="0 0 16 16">
+                                        <path d="M7.752.066a.5.5 0 0 1 .496 0l3.75 2.143a.5.5 0 0 1 .252.434v3.995l3.498 2A.5.5 0 0 1 16 9.07v4.286a.5.5 0 0 1-.252.434l-3.75 2.143a.5.5 0 0 1-.496 0l-3.502-2-3.502 2.001a.5.5 0 0 1-.496 0l-3.75-2.143A.5.5 0 0 1 0 13.357V9.071a.5.5 0 0 1 .252-.434L3.75 6.638V2.643a.5.5 0 0 1 .252-.434L7.752.066ZM4.25 7.504 1.508 9.071l2.742 1.567 2.742-1.567L4.25 7.504ZM7.5 9.933l-2.75 1.571v3.134l2.75-1.571V9.933Zm1 3.134 2.75 1.571v-3.134L8.5 9.933v3.134Zm.508-3.996 2.742 1.567 2.742-1.567-2.742-1.567-2.742 1.567Zm2.242-2.433V3.504L8.5 5.076V8.21l2.75-1.572ZM7.5 8.21V5.076L4.75 3.504v3.134L7.5 8.21ZM5.258 2.643 8 4.21l2.742-1.567L8 1.076 5.258 2.643ZM15 9.933l-2.75 1.571v3.134L15 13.067V9.933ZM3.75 14.638v-3.134L1 9.933v3.134l2.75 1.571Z"/>
+                                    </svg>
+                                ---
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dpad" viewBox="0 0 16 16">
+                                        <path d="m7.788 2.34-.799 1.278A.25.25 0 0 0 7.201 4h1.598a.25.25 0 0 0 .212-.382l-.799-1.279a.25.25 0 0 0-.424 0Zm0 11.32-.799-1.277A.25.25 0 0 1 7.201 12h1.598a.25.25 0 0 1 .212.383l-.799 1.278a.25.25 0 0 1-.424 0ZM3.617 9.01 2.34 8.213a.25.25 0 0 1 0-.424l1.278-.799A.25.25 0 0 1 4 7.201V8.8a.25.25 0 0 1-.383.212Zm10.043-.798-1.277.799A.25.25 0 0 1 12 8.799V7.2a.25.25 0 0 1 .383-.212l1.278.799a.25.25 0 0 1 0 .424Z"/>
+                                        <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v3a.5.5 0 0 1-.5.5h-3A1.5 1.5 0 0 0 0 6.5v3A1.5 1.5 0 0 0 1.5 11h3a.5.5 0 0 1 .5.5v3A1.5 1.5 0 0 0 6.5 16h3a1.5 1.5 0 0 0 1.5-1.5v-3a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 0 16 9.5v-3A1.5 1.5 0 0 0 14.5 5h-3a.5.5 0 0 1-.5-.5v-3A1.5 1.5 0 0 0 9.5 0h-3ZM6 1.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v3A1.5 1.5 0 0 0 11.5 6h3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5h-3a1.5 1.5 0 0 0-1.5 1.5v3a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-3A1.5 1.5 0 0 0 4.5 10h-3a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 0 6 4.5v-3Z"/>
+                                    </svg>
+                                    ---
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>---</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>---</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="container w-25">
+                    <div class="fs-4 text">favorK</div>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td><div class="soft-link" data-nav="Overview">Bitcoin</div></td>
+                            </tr>
+                            <tr>
+                                <td>Ether</td>
+                            </tr>
+                            <tr>
+                                <td>Dogecoin</td>
+                            </tr>
+                            <tr>
+                                <td>Tether</td>
+                            </tr>
+                            <tr>
+                                <td>Maker</td>
+                            </tr>
+                            <tr>
+                                <td>Dash</td>
+                            </tr>
+                            <tr>
+                                <td>Litecoin</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section id="Overview" class="under-construction-2 hidden">
+            <div class="mb-5 fs-2 text">Current Screen</div>
+            <div class="w-75 d-flex flex-column border border-secondary">
+                <div class="input-group d-flex flex-row-reverse bd-highlight">
+                    <div class="p-2 bd-highlight border border-secondary">7day</div>
+                    <div class="p-2 bd-highlight border border-secondary">24h</div>
+                    <div class="p-2 bd-highlight border border-secondary">1hr</div>
+                </div>
+                <div class="d-flex flex-row bd-highlight mb-3">
+                    <div class="p-2 bd-highlight">Bitcoin</div>
+                </div>
+            </div>
+
+            <table class="table w-75">
+                <thead>
+                    <tr>
+                        <th scope="col">Price</th>
+                        <th scope="col">1h</th>
+                        <th scope="col">24h</th>
+                        <th scope="col" class="col-8"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-graph-up" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0Zm14.817 3.113a.5.5 0 0 1 .07.704l-4.5 5.5a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61 4.15-5.073a.5.5 0 0 1 .704-.07Z"/>
+                </svg>
+            </div>
+
+        </section>
+        <section id="Alerts" class="under-construction-2 hidden">
+            <div class="fs-2 text">Alerts</div>
+
+            <p class="fs-4 text-decoration-underline">Coin</p>
+
+            <div class="d-flex bd-highlight">
+                <p class="fs-4 text-decoration-underline">Litecoin</p>
+                <div class="m-2 form-switch d-flex flex-column alert-center">
+                    <label class="form-check-label" for="flexSwitchCheckChecked">on off</label>
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                </div>
+            </div>
+
+            <div class="w-50 d-flex bd-highlight alert alert-secondary" role="alert">
+                <div class="col-4">
+                    <div class="d-flex flex-column alert-center">
+                        <label class="form-check-label" for="alert-01">Alert 1</label>
+                        <input class="form-check-input" type="checkbox" id="alert-01">
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="d-flex flex-column alert-center">
+                        <label class="form-check-label" for="alert-02">Alert 2</label>
+                        <input class="form-check-input" type="checkbox" id="alert-02">
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="d-flex flex-column alert-center">
+                        <label class="form-check-label" for="alert-03">Alert 3</label>
+                        <input class="form-check-input" type="checkbox" id="alert-03">
+                    </div>
+                </div>
+            </div>
+
+            <p class="fs-4">DogeCoin</p>
+
+        </section>
+    </main>
+
+    <script src="dashboard-mockup.js"></script>
+</body>
+</html>

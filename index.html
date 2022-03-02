@@ -5,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Green Hammer - Mockup</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/brands.min.css" integrity="sha512-bSncow0ApIhONbz+pNI52n0trz5fMWbgteHsonaPk42JbunIeM9ee+zTYAUP1eLPky5wP0XZ7MSLAPxKkwnlzw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles/mockup.css">
+    <link rel="stylesheet" href="mockup.css">
     <style>
         .icons-fixed {
             max-height: 1.5rem;
@@ -15,12 +17,73 @@
             position: fixed;
             bottom: 0;
         }
-
         #TradingTable {
             border: 1px dashed #8888;
         }
         #TradingTable td {
             border: 1px solid #3339;
+        }
+        .my-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            place-content: center;
+            place-items: center;
+        }
+        .login-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #form3 {
+            background-image: linear-gradient(180deg, hsl(150, 50%, 25%), hsl(150, 50%, 10%));
+        }
+        .form-title {
+            color: hsl(150, 10%, 90%);
+        }
+        .login-input {
+            background-color: #fff0;
+            border: 0px solid transparent;
+            border-radius: 0px;
+            box-shadow: 
+            inset 0px 0px 0px hsla(150, 30%, 10%, 0),
+            inset 0px -1px 0px hsla(150, 60%, 50%, 1);
+            transition: 
+            background-color 200ms ease-in-out,
+            box-shadow 200ms ease-in-out;
+        }
+        .login-input:focus {
+            background-color: hsla(150, 30%, 40%, 1);
+            border: 0px solid transparent;
+            outline: 0px solid transparent;
+            box-shadow: 
+            inset 2px 2px 2px hsl(150, 30%, 10%),
+            inset -1px -1px 1px hsla(150, 30%, 60%, 1);
+        }
+        .login-input-label {
+            color: hsl(150, 10%, 90%);
+            color: hsl(150, 30%, 60%);
+        }
+        .login-input:focus ~ .login-input-label {
+            color: hsl(150, 30%, 10%);
+        }
+        .login-btn {
+            background-color: hsla(150, 100%, 20%, 1);
+            color: hsla(150, 100%, 95%, 1);
+            border-radius: 2rem;
+            border: 0px solid transparent;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            min-width: 8rem;
+            box-shadow: 0rem .25rem .25rem -.125rem hsla(150, 30%, 5%, .8);
+            transition: 
+                color 200ms ease-in-out,
+                background-color 200ms ease-in-out,
+                box-shadow 200ms ease-in-out;
+        }
+        .login-btn:hover {
+            color: hsla(150, 100%, 95%, 1);
+            background-color: hsla(150, 100%, 30%, 1);
+            box-shadow: 0rem .375rem .375rem -.125rem hsla(150, 30%, 5%, .8);
         }
     </style>
 </head>
@@ -29,7 +92,7 @@
         <nav>
             <ul>
                 <li><button class="brand" data-nav="Home">Green Hammer</button></li>
-                <li><button class="navbtn" data-navto="Home">
+                <li><button class="navbtn selected" data-navto="Home">
                     <div class="icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
@@ -37,7 +100,9 @@
                         </svg>
                     </div>
                     Home</button></li>
-                <li><button class="navbtn selected" data-navto="Dashboard">
+                <!-- <li><button class="navbtn" data-navto="Home">
+                    <div class="fa-icon fa-house"></div>Home 2</button></li> -->
+                <li><button class="navbtn" data-navto="Dashboard">
                     <div class="icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-expand" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z"/>
@@ -78,15 +143,206 @@
                         </svg>
                     </div>
                     Settings</button></li>
-                <li><div class="nav-ver" data-ver="v.0.08">&nbsp;</div></li>
+
+                <!-- <li><button class="navbtn" data-navto="Settings">
+                    <div class="fa-icon fa-settings"></div>Settings 2</button>
+                </li> -->
+                <li><div class="nav-ver" data-ver="v.0.09">&nbsp;</div></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section id="Home" class="under-construction hidden">
+        <section id="Home" class="under-construction-2">
             <h2>Home</h2>
+            <div class="container border-success rounded hidden">
+                <div class="d-flex flex-column bd-highlight mb-3">
+                    <div class="p-2 bd-highlight">
+                        <form>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="inputPassword2" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+                            </div>
+                            <div class="col-auto">
+                                <button type="submit" class="btn btn-primary mb-3">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container border border-success rounded">
+                <div class="d-flex flex-row bd-highlight mb-3 login-list">
+                    <form class="m-2 p-5 border border-secondary rounded">
+                        <div class="fs-2 fw-bold mb-3">Login v1</div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputPassword2" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-primary mb-3">Sign in</button>
+                        </div>
+                    </form>
+
+                    <form class="m-2 p-5 border border-secondary rounded">
+                        <div class="fs-2 fw-bold mb-3">Login v2</div>
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                            <label for="floatingInput">Email address</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword">Password</label>
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-primary mb-3">Sign in</button>
+                        </div>
+                    </form>
+
+                    <form id="form3" class="m-2 p-5 rounded">
+                        <div class="fs-2 fw-bold mb-3 form-title">Login v3</div>
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control login-input" id="floatingInput" placeholder="name@example.com">
+                            <label for="floatingInput" class="login-input-label">Email address</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control login-input" id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword" class="login-input-label">Password</label>
+                        </div>
+                        <div class="my-center">
+                            <button class="btn mb-3 login-btn">Sign in</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="container hidden">
+                <div class="d-flex flex-column bd-highlight mb-3">
+                    <div class="p-2 bd-highlight">
+                        <div class="spinner-border" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                    <div class="p-2 bd-highlight">
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                          <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                          <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                          <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                          <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                    </div>
+                    <div class="p-2 bd-highlight d-flex flex-row bd-highlight mb-3">
+                        <div class="p-2 bd-highlight">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                  <a class="nav-link active" aria-current="page" href="#">Active</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#">Link</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#">Link</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link disabled">Disabled</a>
+                                </li>
+                              </ul>
+                        </div>
+                        <div class="p-2 bd-highlight">
+                            <nav class="nav flex-column">
+                                <a class="nav-link active" aria-current="page" href="#">Active</a>
+                                <a class="nav-link" href="#">Link</a>
+                                <a class="nav-link" href="#">Link</a>
+                                <a class="nav-link disabled">Disabled</a>
+                              </nav>
+                        </div>
+                    </div>
+
+                    <div class="p-2 bd-highlight">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="p-2 bd-highlight">
+                        <form class="row g-3">
+                            <div class="col-auto">
+                                <label for="staticEmail2" class="visually-hidden">Email</label>
+                                <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="email@example.com">
+                            </div>
+                            <div class="col-auto">
+                                <label for="inputPassword2" class="visually-hidden">Password</label>
+                                <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+                            </div>
+                            <div class="col-auto">
+                                <button type="submit" class="btn btn-primary mb-3">Confirm identity</button>
+                            </div>
+                        </form>
+                    </div>
+
+
+                    <div class="p-2 bd-highlight">
+                        <p>
+                            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+                              Toggle width collapse
+                            </button>
+                          </p>
+                          <div style="min-height: 120px;">
+                            <div class="collapse collapse-horizontal" id="collapseWidthExample">
+                              <div class="card card-body" style="width: 300px;">
+                                This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered.
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="p-2 bd-highlight">
+                        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                            <div class="container-fluid">
+                              <a class="navbar-brand" href="#">Navbar</a>
+                              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                              </button>
+                              <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                                <ul class="navbar-nav">
+                                  <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                      Dropdown
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                                      <li><a class="dropdown-item" href="#">Action</a></li>
+                                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </nav>
+                    </div>
+                </div>
+            </div>
         </section>
-        <section id="Dashboard" class="under-construction">
+        <section id="Dashboard" class="under-construction hidden">
             <h2>Dashboard</h2>
             <table id="SampleTable" class="table">
 
@@ -94,10 +350,40 @@
         </section>
         <section id="AppsAndTools" class="under-construction hidden">
             <h2>Apps & Tools</h2>
+
+            <div class="container hidden">
+                <div class="alert alert-primary" role="alert">
+                    A simple primary alert—check it out!
+                  </div>
+                  <div class="alert alert-secondary" role="alert">
+                    A simple secondary alert—check it out!
+                  </div>
+                  <div class="alert alert-success" role="alert">
+                    A simple success alert—check it out!
+                  </div>
+                  <div class="alert alert-danger" role="alert">
+                    A simple danger alert—check it out!
+                  </div>
+                  <div class="alert alert-warning" role="alert">
+                    A simple warning alert—check it out!
+                  </div>
+                  <div class="alert alert-info" role="alert">
+                    A simple info alert—check it out!
+                  </div>
+                  <div class="alert alert-light" role="alert">
+                    A simple light alert—check it out!
+                  </div>
+                  <div class="alert alert-dark" role="alert">
+                    A simple dark alert—check it out!
+                  </div>
+            </div>
         </section>
         <section id="Widgets" class="under-construction hidden">
             <h2>Widgets</h2>
-            <a href="widgets" class="btn btn-warning">Go to Widgets</a>
+            <!-- <button class="btn btn-warning" onclick="addWidget()">Add TradingView Widget</button> -->
+            <!-- <a href="widgets" class="btn btn-warning">Go to Widgets</a> -->
+            <a href="#" class="btn btn-warning">Go to Widgets</a>
+            
         </section>
         <section id="Community" class="under-construction hidden">
             <h2>Community</h2>
@@ -110,6 +396,6 @@
         </section>   
     </main>
 
-    <script src="scripts/main.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
