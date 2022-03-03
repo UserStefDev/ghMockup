@@ -1,4 +1,3 @@
-'use strict'
 
 function HideAll(){
     let sections = document.querySelectorAll('section');
@@ -26,19 +25,29 @@ function NavTo(sectionID){
 }
 
 
-
-
-
 window.addEventListener('load', (ev)=>{
     console.log('Welcome.');
-    let navbtns = document.querySelectorAll('.navbtn');
-    navbtns.forEach(element => {
-        element.addEventListener('click', (ev)=>{
-            NavTo(ev.target.dataset.navto);
+
+    let loginBtn = document.getElementById('login');
+    loginBtn.addEventListener('click', (e)=>{
+        
+        let navbtns = document.querySelectorAll('.navbtn');
+        navbtns.forEach(element => {
+            element.addEventListener('click', (ev)=>{
+                NavTo(ev.target.dataset.navto);
+            });
         });
-    });
-    let navHome = document.querySelector('[data-nav]');
-    navHome.addEventListener('click', (ev)=>{
-        NavTo(ev.target.dataset.nav);
+        let navLinks = document.querySelectorAll('[data-nav]');
+        navLinks.forEach(element => {
+            element.addEventListener('click', (ev)=>{
+                NavTo(ev.target.dataset.nav);
+            });
+        });
+
+        let loginCard = document.getElementById('login-card');
+        loginCard.classList.add('hidden');
+
+
+        NavTo(e.target.dataset.navto);
     });
 });
